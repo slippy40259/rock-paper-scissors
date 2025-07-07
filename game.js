@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+const rounds = 5;
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
@@ -48,4 +49,17 @@ function playRound(humanChoice, computerChoice) {
     else {
         console.log("Draw! Let's reroll again");
     }
-} 
+    console.log("Human score: " + humanScore.toString() + ", Computer score: " + computerScore.toString());
+}
+
+function playGame() {
+    let currRound = 0;
+    while (currRound < rounds) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        currRound++;
+    }
+}
+
+playGame();
