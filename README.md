@@ -1,1 +1,1 @@
-# rock-paper-scissors
+# Creating a web page rock, paper, scissors app
