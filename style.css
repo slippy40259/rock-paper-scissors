@@ -1,0 +1,17 @@
+body {
+    font-family: "Roboto";
+}
+
+.ui {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 777px;
+}
+
+.choices {
+    display: flex;
+    gap: 8px;
+}

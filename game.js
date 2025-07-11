@@ -53,13 +53,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    let currRound = 0;
-    while (currRound < rounds) {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        currRound++;
-    }
+
 }
 
 playGame();
