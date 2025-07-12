@@ -1,5 +1,8 @@
 body {
     font-family: "Roboto";
+    color: #F9FAF8;
+    margin: 0;
+    padding: 0;
 }
 
 .ui {
@@ -8,7 +11,20 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    height: 777px;
+    height: 900px;
+    background-color: #3882F6;
+}
+
+button {
+    border-radius: 5px;
+    color: #F9FAF8;
+    background-color: #3882F6;
+    border: solid #F9FAF8;
+}
+
+.score {
+    display: flex;
+    gap: 8px;
 }
 
 .choices {

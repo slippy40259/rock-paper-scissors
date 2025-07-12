@@ -38,7 +38,12 @@ function playRound(humanChoice, computerChoice) {
     else {
         console.log("Draw! Let's reroll again");
     }
-    console.log("Human score: " + humanScore.toString() + ", Computer score: " + computerScore.toString());
+    let computerChoiceDisplay = document.querySelector("#cchoice");
+    let humanScoreDisplay = document.querySelector("#hscore");
+    let computerScoreDisplay = document.querySelector("#cscore");
+    computerChoiceDisplay.textContent = "The computer choose " + computerChoice;
+    humanScoreDisplay.textContent = humanScore.toString();
+    computerScoreDisplay.textContent = computerScore.toString();
 }
 
 function playGame() {
@@ -46,11 +51,22 @@ function playGame() {
     let buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (currRounds < 5) {
+            if (currRounds < rounds) {
                 let humanSelection = button.id;
                 let computerSelection = getComputerChoice();
                 playRound(humanSelection, computerSelection);
                 currRounds++;
+            }
+            else {
+                if (humanScore > computerScore) {
+                    alert("You win!")
+                }
+                else if (computerScore > humanScore) {
+                    alert("The computer wins!");
+                }
+                else {
+                    alert("TIE!");
+                }
             }
         })
     })
