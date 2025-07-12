@@ -10,17 +10,6 @@ function getComputerChoice() {
         :  "scissors";
 }
 
-function getHumanChoice() {
-    let choice = prompt("Choose your weapon of choice: rock, paper, or scissors", "rock");
-    const hand = ["rock", "paper", "scissors"];
-
-    while (!hand.includes(choice.toLowerCase())) {
-        choice = prompt("That weapon does not exist! Choose a different one: rock, paper, or scissors", "rock");
-    }
-    
-    return choice.toLowerCase();
-}
-
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == "rock" && computerChoice == "paper") {
         console.log("You lose! Paper beats rock");
@@ -53,7 +42,18 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-
+    let currRounds = 0;
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach((humanChoice) => {
+        button.addEventListener("click", () => {
+            if (currRounds < 5) {
+                let humanSelection = humanChoice.id;
+                let computerSelection = getComputerChoice();
+                playRound(humanSelection, computerSelection);
+                currRounds++;
+            }
+        })
+    })
 }
 
 playGame();
