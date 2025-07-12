@@ -44,10 +44,10 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     let currRounds = 0;
     let buttons = document.querySelectorAll("button");
-    buttons.forEach((humanChoice) => {
+    buttons.forEach((button) => {
         button.addEventListener("click", () => {
             if (currRounds < 5) {
-                let humanSelection = humanChoice.id;
+                let humanSelection = button.id;
                 let computerSelection = getComputerChoice();
                 playRound(humanSelection, computerSelection);
                 currRounds++;
